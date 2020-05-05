@@ -8,10 +8,10 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
         <style>
-
             .blog-header-titel{
                 font-family: 'Abril Fatface';
                 font-size: 1.8rem;
+                font-weight: 400;
                 text-transform: uppercase;
             }
 
@@ -33,7 +33,9 @@
             }
 
             .pre-title{
-                font-family: 'Abril Fatface'
+                font-family: 'Martel';
+                font-weight:900;
+                font-size: 1.5rem;
             }
             
             .pre-view{
