@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Validator, Redirect, Response, File;
 
 class PostController extends Controller
@@ -36,7 +38,28 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        try {
+            $validatedData = $request->validate([
+                'title' => 'required|max:120',
+                'post' => 'required',
+            ]);
+        }
+        catch (Exception $e) {
+            Session::flash('message', 'Sisestatud vigased andmed! Kahjuks tuleb alata algusest');
+            Session::flash('alert-class', 'alert-danger');
+            return redirect()->route('posts.create');
+        }
+
+        $post = new Post;
+        $post->title = $request->title;
+        $post->body = $request->post;
+        if ($request->filled('category')) {
+            $post->category = $request->category;
+        }
+        $post->rating = intval($request->rating);
+        $post->save();
+
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**

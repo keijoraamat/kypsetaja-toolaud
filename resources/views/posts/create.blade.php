@@ -4,11 +4,14 @@
 <div class="preview">
     <div class="d-inline-flex pre-title">Uus postitus</div>
     <div class="pre-view input_form">
+        @if(Session::has('message'))
+<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+@endif
         <form  method="POST" action="/posts" >
             {{ csrf_field() }}
             <div class="p-1 form-group w-75">
-                <label  for="titel" class="col-form-label"><span class="input-group-addon">Pealkiri</span></label>
-                <input class="form-control" id="titel" name="titel">
+                <label  for="title" class="col-form-label"><span class="input-group-addon">Pealkiri</span></label>
+                <input class="form-control" id="title" name="title">
             </div>
             <div class="pl-1 form-group w-50">
                 <label for="category" class="col-form-label"><span class="input-group-addon">Kategooria</span></label>
