@@ -54,4 +54,7 @@
             .pre-img{
                 height: 50%;
             }
+            .preview{
+                max-width: 680px;
+            }
         </style>

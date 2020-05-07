@@ -13,7 +13,7 @@
     </header>
     <div class="d-flexi navi">
         <nav class="d-inline-flex justify-content-between">
-            <a class="p-2 sub-section" href="#">Sissekanded </a>
+            <a class="p-2 sub-section" href="/posts/create ">Lisa postitus</a>
             <a class="p-2 sub-section" href="#">Retseptid</a>
             <a class="p-2 sub-section" href="#">Lingid</a>
         </nav>
