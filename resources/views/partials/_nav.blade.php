@@ -17,4 +17,5 @@
             <a class="p-2 sub-section" href="#">Retseptid</a>
             <a class="p-2 sub-section" href="#">Lingid</a>
         </nav>
+        <hr>
     </div>
