@@ -26,5 +26,10 @@
             <button class="ml-1 mb-1 btn btn-success" name="action" value="store">Salvesta muudatused</button>
             <a href="{{ route('posts.show', $post->id)}}" class="ml-1 mb-1 btn btn-secondary" name="action" value="cancel">Katkesta</a>
         </form>
+        <form method="POST" action="/posts/{{ $post->id }}">
+            {{ csrf_field() }}
+            @method('DELETE')
+            <button  class="ml-1 mb-1 btn btn-danger" name="action" value="destroy">Kustuta</button >
+        </form>
     </div>
 @endsection
