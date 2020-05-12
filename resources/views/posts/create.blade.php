@@ -19,7 +19,7 @@
             </div>
             <div class="pl-1 pt-1 form-group w-75">
                 <label for="rating">Reiting nullist viieni</label>
-                <input type="range" class="custom-range" min="0" max="4" step="1" id="rating" name="rating">
+                <input type="range" class="custom-range" min="1" max="5" step="1" id="rating" name="rating">
             </div>
             <div class="p-1 form-group">
                 <label for="post" class="sr-only"><span class="input-group-addon">Postituse sisu</span></label>
