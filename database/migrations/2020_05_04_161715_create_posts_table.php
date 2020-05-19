@@ -15,11 +15,17 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 120)->nullable();
-            $table->text('body')->nullable();
+            $table->string('title', 120);
+            $table->text('body');
             $table->string('category')->default('puudub');
             $table->unsignedTinyInteger('rating')->nullable();
+            $table->unsignedBigInteger('comment_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('comment_id')
+                    ->references('id')
+                    ->on('comments')
+                    ->onDelete('cascade');
         });
     }
 
