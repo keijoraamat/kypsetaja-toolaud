@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public function comments ()
+    protected $table = 'posts';
+    public function comment ()
     {
         return $this->hasMany(Comment::class);
     }
