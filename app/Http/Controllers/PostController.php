@@ -71,7 +71,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
+        $blogPost = Post::find($id);
+        $post = $blogPost;
+        $post->comment = $blogPost->comment;
         return view('posts.show', compact('post'));
     }
 
