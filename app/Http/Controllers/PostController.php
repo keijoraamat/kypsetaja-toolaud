@@ -39,18 +39,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        try {
             $validatedData = $request->validate([
                 'title' => 'required|max:120',
                 'post' => 'required',
             ]);
-        }
-        catch (Exception $e) {
-            Session::flash('message', 'Sisestatud vigased andmed! Kahjuks tuleb alata algusest');
-            Session::flash('alert-class', 'alert-danger');
-            return redirect()->route('posts.create');
-        }
-
+  
         $post = new Post;
         $post->title = $request->title;
         $post->body = $request->post;
