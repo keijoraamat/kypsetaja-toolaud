@@ -57,4 +57,7 @@
             .preview{
                 max-width: 680px;
             }
+            .input-error{
+                background-color: #F0BDD8;
+            }
         </style>
