@@ -19,13 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('category')->default('puudub');
             $table->unsignedTinyInteger('rating')->nullable();
-            $table->unsignedBigInteger('comments_id')->nullable();
             $table->timestamps();
-
-            $table->foreign('comments_id')
-                ->references('id')->on('comments')
-                ->onDelete('cascade');
-
         });
     }
 

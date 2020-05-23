@@ -43,7 +43,7 @@ class PostController extends Controller
             'title' => 'required|max:120',
             'post' => 'required',
         ]);
-        
+
         $post = new Post;
         $post->title = $request->title;
         $post->body = $request->post;
@@ -66,7 +66,6 @@ class PostController extends Controller
     {
         $blogPost = Post::find($id);
         $post = $blogPost;
-        $post->comment = $blogPost->comment;
         return view('posts.show', compact('post'));
     }
 
