@@ -14,8 +14,7 @@
                 Viimati küpsetatud: {{$post->updated_at}}
             </div>
             <div class="col p-2 d-inline-flex pre-img">
-                {{$post->imge_url}}
-                <img src="/{{$post->image_url}}" class="img-fluid" alt="dummy image">
+                <img src="/{{$post->image_url}}" class="img-fluid">
             </div>
     </div>
     <div class="row d-flex justify-content-end">
