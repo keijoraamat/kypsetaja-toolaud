@@ -39,17 +39,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $validatedData = $request->validate([
-                'title' => 'required|max:120',
-                'post' => 'required',
-            ]);
-        }
-        catch (Exception $e) {
-            Session::flash('message', 'Sisestatud vigased andmed! Kahjuks tuleb alata algusest');
-            Session::flash('alert-class', 'alert-danger');
-            return redirect()->route('posts.create');
-        }
+        $validatedData = $request->validate([
+            'title' => 'required|max:120',
+            'post' => 'required',
+        ]);
 
         $post = new Post;
         $post->title = $request->title;
@@ -58,6 +51,13 @@ class PostController extends Controller
             $post->category = $request->category;
         }
         $post->rating = intval($request->rating);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = $request->file('image')->getClientOriginalName();
+            $directoryName = 'uploads/images/';
+            $file->move($directoryName, $imageName);
+            $post->image_url = $directoryName.$imageName;
+        }
         $post->save();
 
         return redirect()->route('posts.show', $post->id);
@@ -73,7 +73,6 @@ class PostController extends Controller
     {
         $blogPost = Post::find($id);
         $post = $blogPost;
-        $post->comment = $blogPost->comment;
         return view('posts.show', compact('post'));
     }
 
