@@ -32,6 +32,7 @@
                         <p class="text-danger">Postitusel peab olema sisu</p>
                     @enderror
                 </div>
+                
                 <div class="p-1 form-group">
                     <div>
                         <label for="image">Foto</label>
