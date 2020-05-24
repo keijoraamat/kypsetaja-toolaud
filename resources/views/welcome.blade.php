@@ -10,13 +10,13 @@
                         </div>
                     <div class="row justify-content-between pre-view">
                         <div class="col p-2 d-inline-flex pre-recipe">
-                            {{substr_count($post->body, "\n") > 3 ? strtok($post->body, "\n").strtok("\n").strtok("\n") : $post->body}}
+                            {{substr($post->body, 0, 250).'...'}}
                         </div>
                         <div class="col p-2 d-flex">
                                 <a class="d-inline-flex aligin-self-end" href="{{ route('posts.show', $post->id)}}">Loe lisa</a>
                         </div>
                         <div class="col p-2 d-inline-flex pre-img">
-                            <img src="assets/img/brioche.jpg" class="img-fluid" alt="dummy image">
+                            <img src="/{{$post->image_url}}" class="img-fluid">
                         </div>
                     </div>
                 </div>
