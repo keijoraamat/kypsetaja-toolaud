@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title', 200);
             $table->text('body');
             $table->string('category')->default('puudub');
-            $table->text('imge_url')->nullable();
+            $table->text('image_url')->nullable();
             $table->unsignedTinyInteger('rating')->nullable();
             $table->timestamps();
         });

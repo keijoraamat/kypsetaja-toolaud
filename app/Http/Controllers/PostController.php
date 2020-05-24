@@ -51,6 +51,13 @@ class PostController extends Controller
             $post->category = $request->category;
         }
         $post->rating = intval($request->rating);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = $request->file('image')->getClientOriginalName();
+            $directoryName = 'uploads/images/';
+            $file->move($directoryName, $imageName);
+            $post->image_url = $directoryName.$imageName;
+        }
         $post->save();
 
         return redirect()->route('posts.show', $post->id);
