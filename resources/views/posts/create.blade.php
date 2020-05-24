@@ -4,7 +4,7 @@
     <div class="preview">
         <div class="d-inline-flex pre-title">Uus postitus</div>
         <div class="pre-view input_form">
-            <form  method="POST" action="/posts" >
+            <form  method="POST" action="/posts" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
                 <div class="p-1 form-group w-75">
@@ -31,6 +31,12 @@
                     @error('post')
                         <p class="text-danger">Postitusel peab olema sisu</p>
                     @enderror
+                </div>
+                <div class="p-1 form-group">
+                    <div>
+                        <label for="image">Foto</label>
+                        <input class="btn btn-light" type="file" id="image" name="image" >
+                    </div>
                 </div>
 
                 <button class="ml-1 mb-1 btn btn-success" name="action" value="store">Salvesta</button>
