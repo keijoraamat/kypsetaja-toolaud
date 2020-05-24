@@ -16,9 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@index');
 
-Route::resource('posts', 'PostController');
+Route::resource('posts', 'PostController', [
+    'except' => ['store', 'update', 'delete']
+]);
+Route::post('posts', 'PostController@store')->name('posts.store');
+Route::put('posts/{post}', 'PostController@update')->name('posts.update');
+Route::delete('posts/{post}', 'PostController@destroy')->name('posts.destroy');
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
