@@ -19,9 +19,9 @@ Route::get('/', 'PostController@index');
 Route::resource('posts', 'PostController', [
     'except' => ['store', 'update', 'delete']
 ]);
-Route::post('posts', 'PostController@store')->name('posts.store');
-Route::put('posts/{post}', 'PostController@update')->name('posts.update');
-Route::delete('posts/{post}', 'PostController@destroy')->name('posts.destroy');
+Route::post('posts', 'PostController@store')->name('posts.store')->middleware('auth');
+Route::put('posts/{post}', 'PostController@update')->name('posts.update')->middleware('auth');
+Route::delete('posts/{post}', 'PostController@destroy')->name('posts.destroy')->middleware('auth');
 
 Auth::routes([
     'register' => false,
