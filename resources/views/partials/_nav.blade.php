@@ -14,7 +14,7 @@
         </div>
         <div class="d-flex flex-row">
             <div class=" text-left">
-                <a class="blog-header-titel text-nowrap text-dark" href="/">Logiraamat</a>
+                <a class="blog-header-titel text-nowrap text-dark" href="/">Küpsetaja logiraamat</a>
             </div>
         </div>
     </header>
@@ -23,8 +23,8 @@
             @auth
             <a class="p-2 sub-section" href="/posts/create ">Lisa postitus</a>
             @endauth 
-            <a class="p-2 sub-section" href="#">Retseptid</a>
-            <a class="p-2 sub-section" href="#">Lingid</a>
+            <a class="p-2 sub-section" href="/about">Küpsetajast</a>
+            <a class="p-2 sub-section" href="/links">Lingid</a>
         </nav>
         <hr>
     </div>
