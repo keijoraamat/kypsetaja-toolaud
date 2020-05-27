@@ -6,4 +6,5 @@ This blog is fairly simple Laravel project. The main emphasis on the whole softw
 
 ### The Blog
 The blog is hosted at Heroku: [http://kypsetaja-toolaud.herokuapp.com/](http://kypsetaja-toolaud.herokuapp.com/ "Küpsetaja töölaud")
+To view all blogs features user must log in. Test username/password used in development is 1234@1234.ee/12345678
 
